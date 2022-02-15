@@ -66,7 +66,7 @@ puts "Creating users......."
 User.destroy_all
 
 u1 = User.create!(
-    name: 'Cameron',
+    name: 'Admin',
     is_admin: true,
     password: 'chicken'
 ) 
@@ -77,6 +77,11 @@ u2 = User.create!(
 ) 
 u3 = User.create!(
     name: 'Jia',
+    is_admin: true,
+    password: 'chicken'
+) 
+u4 = User.create!(
+    name: 'Cameron',
     is_admin: true,
     password: 'chicken'
 ) 
@@ -95,9 +100,9 @@ r1 = Reservation.create!
 r2 = Reservation.create!
 r3 = Reservation.create!
 
-u1.reservations << r1
-u2.reservations << r2
-u3.reservations << r3
+u2.reservations << r1
+u3.reservations << r2
+u4.reservations << r3
 
 f1.reservations << r1
 f2.reservations << r2
