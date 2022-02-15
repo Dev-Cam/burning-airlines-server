@@ -1,5 +1,7 @@
 
-ActiveRecord::Schema.define(version: 2022_02_15_090329) do
+ActiveRecord::Schema.define(version: 2022_02_15_230012) do
+
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "airplanes", force: :cascade do |t|
@@ -25,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_02_15_090329) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "flight_id"
+    t.integer "seat"
   end
 
   create_table "users", force: :cascade do |t|
