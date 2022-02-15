@@ -33,6 +33,8 @@ puts "Done. Created #{Airplane.count} planes."
 
 puts "Creating flights............"
 
+Flight.destroy_all
+
 f1 = Flight.create!(
     flight_number: 300,
     origin: 'SYD',
@@ -85,13 +87,21 @@ puts "Done. Created #{User.count} users."
 ##################################################
 
 
-puts "Creating bookings....."
+puts "Creating reservations....."
 
 Reservation.destroy_all
 
-r1 = Reservation.create!()
-r2 = Reservation.create!()
-r3 = Reservation.create!()
+r1 = Reservation.create!
+r2 = Reservation.create!
+r3 = Reservation.create!
+
+u1.reservations << r1
+u2.reservations << r2
+u3.reservations << r3
+
+r1.flights << f1
+r2.flights << f2
+r3.flights << f3
 
 
 
