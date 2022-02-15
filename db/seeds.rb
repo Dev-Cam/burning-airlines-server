@@ -99,9 +99,15 @@ u1.reservations << r1
 u2.reservations << r2
 u3.reservations << r3
 
-r1.flights << f1
-r2.flights << f2
-r3.flights << f3
+f1.reservations << r1
+f2.reservations << r2
+f3.reservations << r3
+
+a1.flights << f1
+a2.flights << f2
+a3.flights << f3
+
+
 
 
 
