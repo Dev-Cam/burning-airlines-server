@@ -1,6 +1,7 @@
 
 <h2>Admin Page</h2>
 
+
 <div id="flight_table">
 <h3>Current flights</h3>
 <button><%= link_to 'Create New Flight', new_flight_path %></button>
@@ -17,7 +18,7 @@
         <% @flights.each do |flight|%>
         
         <li>
-            <p><%= link_to flight.flight_number, flight_path(flight.id)%></p>
+            <p><%= flight.flight_number %></p>
             <p><%= flight.date %></p>
             <p><%= flight.origin %> - <%= flight.destination %></p>
             <p><%= flight.airplane.name%></p>
@@ -33,12 +34,12 @@
 <button><%= link_to 'Create New Airplane', new_airplane_path %></button>
     <ul>
         <li>
-            <p>Plane name</p>
-            <p>Capacity</p>
+            <p><strong>Plane name</strong></p>
+            <p><strong>Capacity</strong></p>
         </li>
         <% @airplanes.each do |plane|%>
         <li>
-            <p><%= link_to plane.name, airplane_path(plane.id)%></p>
+            <p><%= plane.name %></p>
             <p><%= plane.column * plane.row %></p>
         </li>
         <% end %>
