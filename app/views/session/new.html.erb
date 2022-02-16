@@ -1,0 +1,27 @@
+<section class="signin">
+  <div class="signin__title">
+    <h1>
+      SignIn
+    </h1>
+    <h2>Sign in to Burning Airlines</h2>
+    <p>Continue with username you use to sign in.</p>
+  </div>
+
+  <div class="signin__form-container">
+
+    <% if flash[:error] %>
+      <p class="error-msg"><%= flash[:error] %></p>
+    <% end %>
+
+    <%= form_with url: login_path, class: "form", local: true do |f| %>
+      <%= f.text_field :name, placeholder: "Username", required: true %>
+      <%= f.password_field :password, placeholder: "Password", required: true %>
+      <%= f.submit "Login", class: "btn" %>
+    <% end %>
+  </div>
+
+  <div class="signin__new">
+    <p>New user?</p>
+    <%= link_to "Create account", new_user_path %>
+  </div>
+</section>

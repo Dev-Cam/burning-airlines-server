@@ -1,20 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'reservations/index'
-  get 'reservations/new'
-  get 'reservations/edit'
-  get 'reservations/show'
-  get 'users/index'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/show'
-  get 'airplanes/index'
-  get 'airplanes/new'
-  get 'airplanes/edit'
-  get 'airplanes/show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   root to: 'pages#home'
+
+  # login, logout
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
 
   resources :flights
   resources :reservations
