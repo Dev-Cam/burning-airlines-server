@@ -42,8 +42,9 @@ class FlightsController < ApplicationController
 
   ### DELETE
   
-  Flight.destroy params[:id]
-  redirect_to flights_path
-
+  def destroy
+    Flight.destroy params[:id]
+    redirect_to flights_path
+  end
   
 end

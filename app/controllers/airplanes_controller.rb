@@ -42,7 +42,17 @@ class AirplanesController < ApplicationController
     @airplane = Airplane.find params[:id]
   end
 
+  def update
+    airplane = Airplane.find(params[:id])
+    airplane.update_attributes(airplane_params)
+    airplane.save
+    redirect_to airplane_path
+  end
+
   ### DELETE
-  Airplane.destroy params[:id]
-  redirect_to airplanes_path
+
+  def destroy
+    Airplane.destroy params[:id]
+    redirect_to airplanes_path
+  end
 end

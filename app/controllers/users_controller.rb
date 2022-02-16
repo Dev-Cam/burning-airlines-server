@@ -46,7 +46,8 @@ class UsersController < ApplicationController
 
   ### DELETE
   
-  User.destroy params[:id]
-  redirect_to users_path
-
+  def destroy
+    User.destroy params[:id]
+    redirect_to users_path
+  end
 end
