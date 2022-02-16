@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
   ######################### API methods ###########################
   def getAll
     headers['Access-Control-Allow-Origin'] = '*'
-    render json: Reservation.all
+    render json: Reservation.where('flight_id': params[:flight_id]);
   end
 
   def getAllUsers

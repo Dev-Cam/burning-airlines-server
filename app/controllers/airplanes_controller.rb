@@ -1,4 +1,5 @@
 class AirplanesController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
 
   ### CREATE
 
@@ -51,6 +52,8 @@ class AirplanesController < ApplicationController
     Airplane.destroy params[:id]
     redirect_to airplanes_path
   end
+
+
 
   private
   def airplane_params
