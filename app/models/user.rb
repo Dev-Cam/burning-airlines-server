@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
     has_many :reservations 
     # through relationship between user and flight
-
+  
+      
 end

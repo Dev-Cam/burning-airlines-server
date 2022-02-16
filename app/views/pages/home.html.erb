@@ -1,24 +1,43 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Burning Airlines</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
 
-        <h1>Burning Airlines</h1>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
+
+<div class="flight_table">
+<h3>Current flights</h3>
+    <ul>
+        <li>
+            <p>Flight number</p>
+            <p>Flight date</p>
+            <p>Start-Finish</p>
+            <p>Airplane</p>
+            <p>Number of seats booked</p>
+
+        </li>
+        <% @flights.each do |flight|%>
         
-        <script src="" async defer></script>
-    </body>
-</html>
+        <li>
+            <p><%= link_to flight.flight_number, flight_path(flight.id)%></p>
+            <p><%= flight.date %></p>
+            <p><%= flight.origin %> - <%= flight.destination %></p>
+            <p><%= flight.airplane.name%></p>
+            <p>Seats</p>
+            <%#( <p><%= total booked seats%> <%# plane column * plane row </p> %>
+        </li>
+        <% end %>
+    </ul>
+</div>
+
+<div class="airplane_table">
+<h3>Current Airplanes</h3>
+    <ul>
+        <li>
+            <p>Plane name</p>
+            <p>Capacity</p>
+        </li>
+        <% @airplanes.each do |plane|%>
+        <li>
+            <p><%= link_to plane.name, airplane_path(plane.id)%></p>
+            <p><%= plane.column * plane.row %></p>
+        </li>
+        <% end %>
+    </ul>
+</div>
