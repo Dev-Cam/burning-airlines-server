@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
+body, ul {
+  margin: 0;
+}
 
-
+ul {
+  padding: 0;
+}
 
  #flight_table  {
   width: 85%;

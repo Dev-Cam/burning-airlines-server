@@ -15,7 +15,7 @@ class FlightsController < ApplicationController
     flight.save
 
     if flight.persisted?
-      redirect_to flight_path(flight)
+      redirect_to root_path
     else
       render :new
     end
