@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
   ### CREATE
 
   def new
-    @dam.new
+    @flight.new
   end
 
   ### READ
