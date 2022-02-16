@@ -21,7 +21,7 @@
             <p><%= flight.date %></p>
             <p><%= flight.origin %> - <%= flight.destination %></p>
             <p><%= flight.airplane.name%></p>
-            <p>Seats</p>
+            <p>booked seats/<%= flight.airplane.column * flight.airplane.row %> </p>
             <%#( <p><%= total booked seats%> <%# plane column * plane row </p> %>
         </li>
         <% end %>
@@ -44,3 +44,4 @@
         <% end %>
     </ul>
 </div>
+
