@@ -1,2 +1,13 @@
-<h1>Airplanes#index</h1>
-<p>Find me in app/views/airplanes/index.html.erb</p>
+<h3>Airplanes Index</h3>
+
+<%= link_to 'Create Airplane', new_airplane_path %>
+
+
+<ul>
+    <% @airplanes.each do |airplane| %>
+        <li>
+            <%= link_to airplane.name, airplane_path(airplane.id) %> | rows: <%= airplane.row %> | columns: <%= airplane.column %>
+        </li>
+        <% end %>
+    </ul>
+

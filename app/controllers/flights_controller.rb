@@ -1,4 +1,5 @@
 class FlightsController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
   
   
   ### CREATE
@@ -46,5 +47,54 @@ class FlightsController < ApplicationController
     Flight.destroy params[:id]
     redirect_to flights_path
   end
+
+
+  ######################### API methods ###########################
+  def getAll
+    headers['Access-Control-Allow-Origin'] = '*'
+    render json: Flight.all
+  end
+
+
+  def getOne
+    headers['Access-Control-Allow-Origin'] = '*'
+
+    flight = Flight.find params[:id]
+
+    if flight.present?
+      render json: flight
+    else
+      # TODO: need to change status
+      render json: {error: 'could not find flight'}, status: 400
+    end
+  end
+
+  def search
+    headers['Access-Control-Allow-Origin'] = '*'
+
+    flight = Flight.where(["origin = ? and destination = ?", params[:origin], params[:destination]]);
+
+    if flight.present?
+      render json: flight
+    else
+      # TODO: need to change status
+      render json: {error: 'could not find flight'}, status: 400
+    end
+  end
+
+  def getSeats
+    headers['Access-Control-Allow-Origin'] = '*'
+
+    flight = Flight.find params[:id]
+    airplane_type = Airplane.find flight.airplane_id
+
+    render json: airplane_type
+  end
+
+  private
+  def flight_params
+    params.require(:flight).permit(:flight_number, :origin, :destination, :date, :airplane_id)
+  end
   
 end
+

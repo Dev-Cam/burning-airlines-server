@@ -1,0 +1,27 @@
+
+<%= form_with(:model => @airplane, :local => true) do |f| %>
+
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br><br>
+
+  <%= f.label :row %>
+  <br>
+  <%= f.text_field :row %>
+  <br><br>
+
+  <%= f.label :column %>
+  <br>
+  <%= f.text_field :column %>
+  <br><br>
+
+ 
+  <br>
+  <br>
+
+
+  <%= f.submit "Make New Airplane" %>
+
+
+<% end %>
