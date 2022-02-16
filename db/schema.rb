@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_02_15_230012) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "flight_id"
-    t.integer "seat"
+    t.string "seat"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
+
   def index
     @reservations = Reservation.all
   end
@@ -42,6 +44,22 @@ class ReservationsController < ApplicationController
     else
       # TODO: need to change status
       render json: {error: 'could not find reservation'}, status: 400
+    end
+  end
+
+  def make
+    headers['Access-Control-Allow-Origin'] = '*'
+
+    reservation = Reservation.create(
+      user_id: params[:user_id],
+      flight_id: params[:flight_id],
+      seat: params[:seat],
+    )
+
+    if reservation.persisted?
+      render json: reservation
+    else
+      render json: {error: 'could not create reservation'}, status: 422
     end
   end
 
