@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index'
 =======
 
+  get 'reservations/index'
+  get 'reservations/new'
+  get 'reservations/edit'
+  get 'reservations/show'
   get 'users/index'
   get 'users/new'
   get 'users/edit'
