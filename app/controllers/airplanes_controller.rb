@@ -26,31 +26,7 @@ class AirplanesController < ApplicationController
 
   end
 
-  def show
 
-    @airplane = Airplane.find params[:id]
-
-  end
-
-  ### UPDATE
-
-  def edit
-    @airplane = Airplane.find params[:id]
-  end
-
-  def update
-    airplane = Airplane.find(params[:id])
-    airplane.update_attributes(airplane_params)
-    airplane.save
-    redirect_to airplane_path
-  end
-
-  ### DELETE
-
-  def destroy
-    Airplane.destroy params[:id]
-    redirect_to airplanes_path
-  end
 
    #################### API ########################
 
@@ -58,15 +34,6 @@ class AirplanesController < ApplicationController
     headers['Access-Control-Allow-Origin'] = '*'
     render json: Airplane.all
     end 
-
-
-  #################### API ########################
- 
-   def getAll
-     headers['Access-Control-Allow-Origin'] = '*'
-     render json: Airplane.all
-   end 
-
 
 
     private
