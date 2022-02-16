@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
 
   ### CREATE
 
@@ -47,5 +48,11 @@ class UsersController < ApplicationController
   def destroy
     User.destroy params[:id]
     redirect_to users_path
+  end
+
+
+  def getAll
+    headers['Access-Control-Allow-Origin'] = '*'
+    render json: User.all
   end
 end

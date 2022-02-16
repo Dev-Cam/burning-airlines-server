@@ -20,10 +20,9 @@ Rails.application.routes.draw do
 
   get '/api/reservations/:flight_id' => 'reservations#getAll'
   get '/api/:user_id/reservations' => 'reservations#getAllUsers'
-<<<<<<< HEAD
+  post '/api/reservation/:flight_id/:seat/:user_id' => 'reservations#make'
 
   get '/api/airplanes' => 'airplanes#getAll'
-=======
-  post '/api/reservation/:flight_id/:seat/:user_id' => 'reservations#make'
->>>>>>> 18371418d4a4ab289544c7e35116b99f68ef08c3
+
+  get '/api/users' => 'user#getAll'
 end

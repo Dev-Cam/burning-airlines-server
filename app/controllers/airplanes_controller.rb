@@ -52,20 +52,18 @@ class AirplanesController < ApplicationController
     redirect_to airplanes_path
   end
 
+   #################### API ########################
+
+   def getAll
+    headers['Access-Control-Allow-Origin'] = '*'
+    render json: Airplane.all
+    end 
+
 
 
   private
   def airplane_params
     params.require(:airplane).permit(:name, :row, :column)
   end
-
-
- #################### API ########################
-
-  def getAll
-    headers['Access-Control-Allow-Origin'] = '*'
-    render json: Airplane.all
-  end 
-
 
 end

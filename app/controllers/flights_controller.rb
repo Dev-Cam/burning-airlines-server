@@ -63,7 +63,7 @@ class FlightsController < ApplicationController
       render json: flight
     else
       # TODO: need to change status
-      render json: {error: 'could not find flight'}, status: 400
+      render json: {error: 'could not find flight'}, status: 404
     end
   end
 
@@ -76,7 +76,7 @@ class FlightsController < ApplicationController
       render json: flight
     else
       # TODO: need to change status
-      render json: {error: 'could not find flight'}, status: 400
+      render json: {error: 'could not find flight'}, status: 404
     end
   end
 
