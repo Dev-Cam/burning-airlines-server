@@ -16,8 +16,8 @@ class SessionController < ApplicationController
         # redirect to admin page
         redirect_to flights_path
       else
-        # TODO: need to fix this...
-        redirect_to "http://localhost:3001/"
+        # TODO: need to fix this... no security here...
+        redirect_to "http://localhost:3001/#{user.id}"
       end
     else
       flash[:error] = "Invalid username or password"

@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   get '/api/reservations/:flight_id' => 'reservations#getAll'
   get '/api/:user_id/reservations' => 'reservations#getAllUsers'
+  post '/api/reservation/:flight_id/:seat/:user_id' => 'reservations#make'
 end
