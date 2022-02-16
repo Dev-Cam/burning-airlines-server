@@ -18,5 +18,3 @@ Rails.application.routes.draw do
 
   get '/api/reservations' => 'reservations#getAll'
   get '/api/:user_id/reservations' => 'reservations#getAllUsers'
-
-end

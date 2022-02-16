@@ -21,6 +21,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find params[:id]
   end
 
+  def destroy
+    Reservation.destroy params[:id]
+    redirect_to reservations_path
+  end
+
   ######################### API methods ###########################
   def getAll
     headers['Access-Control-Allow-Origin'] = '*'
@@ -39,4 +44,5 @@ class ReservationsController < ApplicationController
       render json: {error: 'could not find reservation'}, status: 400
     end
   end
+
 end

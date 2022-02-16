@@ -68,4 +68,11 @@ class FlightsController < ApplicationController
       render json: {error: 'could not find flight'}, status: 400
     end
   end
+
+  private
+  def flight_params
+    params.require(:flight).permit(:flight_number, :origin, :destination, :date, :airplane_id)
+  end
+  
 end
+

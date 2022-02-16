@@ -1,20 +1,13 @@
-<div class="airplanes">
-  <h1>Airplanes</h1>
-  <p>List of airplains you created.</p>
-  <ul>
-    <li>
-      <h1>Name</h1>
-      <p>Row</p>
-      <p>Column</p>
-    </li>
-    <% @airplanes.each do |a| %>
-    <li>
-      <%= link_to airplane_path a.id do  %>
-        <h1><%= a.name %></h1>
-        <p><%= a.row %></p>
-        <p><%= a.column %></p>
-      <% end %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+<h3>Airplanes Index</h3>
+
+<%= link_to 'Create Airplane', new_airplane_path %>
+
+
+<ul>
+    <% @airplanes.each do |airplane| %>
+        <li>
+            <%= link_to airplane.name, airplane_path(airplane.id) %> | rows: <%= airplane.row %> | columns: <%= airplane.column %>
+        </li>
+        <% end %>
+    </ul>
+
