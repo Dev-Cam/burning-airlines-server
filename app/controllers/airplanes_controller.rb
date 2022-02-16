@@ -12,7 +12,7 @@ class AirplanesController < ApplicationController
     airplane.save
 
     if airplane.persisted?
-      redirect_to airplane_path(airplane)
+      redirect_to root_path
     else
       render :new
     end

@@ -15,22 +15,13 @@ class FlightsController < ApplicationController
     flight.save
 
     if flight.persisted?
-      redirect_to flight_path(flight)
+      redirect_to root_path
     else
       render :new
     end
   end
 
   ### READ
-
-  def create
-    flight = Flight.new flight_params
-    
-    flight.update_attributes(flight_params)
-    flight.save
-
-    redirect_to flights_path
-  end
 
 
   def index
