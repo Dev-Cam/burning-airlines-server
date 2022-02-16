@@ -20,4 +20,10 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find params[:id]
   end
+
+  def destroy
+    Reservation.destroy params[:id]
+    redirect_to reservations_path
+  end
+
 end
