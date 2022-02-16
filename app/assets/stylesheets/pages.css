@@ -1,26 +1,28 @@
-.flight_table  {
-  width: 80%;
+
+#flight_table  {
+  width: 85%;
   margin: auto;
   text-align: center;
+  
 }
 
-.airplane_table {
+#airplane_table {
   width: 50%;
   margin: auto;
   text-align: center;
 }
 
-.airplane_table li p {
+#airplane_table li p {
   width: 50%;
 }
 
-li {
+ li {
   border: 1px solid black;
   display: flex;
   margin: 10px auto; 
   border-radius: 10px;
 }
 
-.flight_table li p {
+#flight_table li p {
   width: 25%;
 }

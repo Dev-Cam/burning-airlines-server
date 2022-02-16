@@ -1,15 +1,16 @@
 
+<h2>Admin Page</h2>
 
-
-<div class="flight_table">
+<div id="flight_table">
 <h3>Current flights</h3>
+    
     <ul>
         <li>
-            <p>Flight number</p>
-            <p>Flight date</p>
-            <p>Start-Finish</p>
-            <p>Airplane</p>
-            <p>Number of seats booked</p>
+            <p><strong>Flight number</strong></p>
+            <p><strong>Flight date</strong></p>
+            <p><strong>Start-Finish</strong></p>
+            <p><strong>Airplane</strong></p>
+            <p><strong>Number of seats booked</strong></p>
 
         </li>
         <% @flights.each do |flight|%>
@@ -26,7 +27,7 @@
     </ul>
 </div>
 
-<div class="airplane_table">
+<div id="airplane_table">
 <h3>Current Airplanes</h3>
     <ul>
         <li>
