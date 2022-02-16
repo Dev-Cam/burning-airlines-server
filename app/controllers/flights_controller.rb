@@ -4,13 +4,20 @@ class FlightsController < ApplicationController
   ### CREATE
 
   def new
-    @flight.new
+    @flight = Flight.new
+    @airplane_select = Airplane.all.pluck(:name, :id)
   end
 
   def create
-    flight = Flight.new flight_params
+    @airplane_select = Airplane.all.pluck(:name, :id)
+    flight = Flight.create flight_params
     flight.save
-    redirect_to flight_path
+
+    if flight.persisted?
+      redirect_to flight_path(flight)
+    else
+      render :new
+    end
   end
 
   ### READ
@@ -51,6 +58,5 @@ class FlightsController < ApplicationController
   def flight_params
     params.require(:flight).permit(:flight_number, :origin, :destination, :date, :airplane_id)
   end
-  
 end
 

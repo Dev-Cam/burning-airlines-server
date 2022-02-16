@@ -15,7 +15,6 @@ class AirplanesController < ApplicationController
     else
       render :new
     end
-    
   end
 
   ### READ

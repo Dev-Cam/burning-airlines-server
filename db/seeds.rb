@@ -11,17 +11,17 @@ puts "Creating Airplanes............"
 Airplane.destroy_all
 
 a1 = Airplane.create!(
-    name: 'Roo',
+    name: 'Roo (747)',
     row: 30,
     column: 4
 )
 a2 = Airplane.create!(
-    name: 'Enterprise',
+    name: 'Enterprise (787 Dreamliner)',
     row: 25,
     column: 4
 )
 a3 = Airplane.create!(
-    name: 'Longreach',
+    name: 'Longreach (A330)',
     row: 20,
     column: 4
 )

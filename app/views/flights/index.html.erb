@@ -1,10 +1,21 @@
 
 <h2>Flights Index</h2>
 
+<%= link_to 'Create Flight', new_flight_path %>
+
 <ul>
     <% @flights.each do |flight| %>
         <li>
-            <%= flight.date %> | <%= link_to flight.flight_number, flight_path(flight.id) %> | <%= flight.origin %> > <%= flight.destination %> | <%= flight.airplane.name %> | TO DO: seats available
+        <p>
+            <%= flight.date %> | <%= link_to flight.flight_number, flight_path(flight.id) %> | <%= flight.origin %> > <%= flight.destination %> |  
+            
+            <% if flight.airplane == nil %>
+                <p>no plane allocated yet</p>
+            <% else %>
+                <%= flight.airplane.name %>  
+            <% end %>
+             | TO DO: seats available
+        </p>
         </li>
         <% end %>
     </ul>
