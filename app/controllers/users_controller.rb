@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-  
-
   ### CREATE
 
   def new

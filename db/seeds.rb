@@ -72,17 +72,17 @@ u1 = User.create!(
 ) 
 u2 = User.create!(
     name: 'David',
-    is_admin: true,
+    is_admin: false,
     password: 'chicken'
 ) 
 u3 = User.create!(
     name: 'Jia',
-    is_admin: true,
+    is_admin: false,
     password: 'chicken'
 ) 
 u4 = User.create!(
     name: 'Cameron',
-    is_admin: true,
+    is_admin: false,
     password: 'chicken'
 ) 
 

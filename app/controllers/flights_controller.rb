@@ -23,15 +23,6 @@ class FlightsController < ApplicationController
 
   ### READ
 
-  def create
-    flight = Flight.new flight_params
-    
-    flight.update_attributes(flight_params)
-    flight.save
-
-    redirect_to flights_path
-  end
-
 
   def index
     @flights = Flight.all
