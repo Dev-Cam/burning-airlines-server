@@ -13,12 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-image: url(main3.png);
+
+ }
 body, ul {
   margin: 0;
 }
 
 ul {
   padding: 0;
+  
+}
+
+.form {
+  width: 70%;
+  margin: auto;
 }
 
  #flight_table  {
@@ -43,6 +53,7 @@ ul {
   display: flex;
   margin: 10px auto; 
   border-radius: 10px;
+  background-color: white;
 }
 
 #flight_table li p {
