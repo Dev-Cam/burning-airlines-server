@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
 
-  before_action :authenticate_user
+  skip_before_action :verify_authenticity_token, raise: false
+
 
 
   ######################### API methods ###########################

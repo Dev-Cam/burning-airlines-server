@@ -1,14 +1,13 @@
 
 class PagesController < ApplicationController
 
+    skip_before_action :verify_authenticity_token, raise: false
+
+
     def index
-        
-        if current_user
-            @flights = Flight.all
-            @airplanes = Airplane.all
-        else
-            flash[:error] = "Not authorised"
-            redirect_to login_path
-        end
+
+        @flights = Flight.all
+        @airplanes = Airplane.all
+
     end
 end
