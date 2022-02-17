@@ -4,7 +4,7 @@
 
 <div id="flight_table">
 <h3>Current flights</h3>
-<button><%= link_to 'Create New Flight', new_flight_path %></button>
+<%= link_to 'Create New Flight', new_flight_path %>
 
     <ul>
         <li>
@@ -22,7 +22,7 @@
             <p><%= flight.date %></p>
             <p><%= flight.origin %> - <%= flight.destination %></p>
             <p><%= flight.airplane.name%></p>
-            <p>booked seats/<%= flight.airplane.column * flight.airplane.row %> </p>
+            <p><%= flight.reservations.length %>/<%= flight.airplane.column * flight.airplane.row %> </p>
             <%#( <p><%= total booked seats%> <%# plane column * plane row </p> %>
         </li>
         <% end %>
@@ -31,7 +31,7 @@
 
 <div id="airplane_table">
 <h3>Current Airplanes</h3>
-<button><%= link_to 'Create New Airplane', new_airplane_path %></button>
+<%= link_to 'Create New Airplane', new_airplane_path %>
     <ul>
         <li>
             <p><strong>Plane name</strong></p>
