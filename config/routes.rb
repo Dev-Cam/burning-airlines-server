@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'pages#home'
+  # root routes to login page
+  # TODO: make homepage with button for login
+  root to: 'session#new'
 
   # login, logout
   get '/login' => 'session#new'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :users
   resources :airplanes
+  resources :pages
 
   # API endpoints 
   get '/api/flights' => 'flights#getAll'

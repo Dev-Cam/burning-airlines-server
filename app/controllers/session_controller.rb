@@ -14,7 +14,7 @@ class SessionController < ApplicationController
       # if a user is admin, redirect to admin
       if user.is_admin?
         # redirect to admin page
-        redirect_to root_path
+        redirect_to pages_path
       else
         # TODO: need to fix this... no security here...
         redirect_to "http://localhost:3001/#{user.id}"
