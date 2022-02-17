@@ -26,6 +26,8 @@ body {
 
 body, ul {
   margin: 0;
+  margin-top: 10px;
+  color: rgb(75, 75, 163);
 }
 
 ul {
@@ -33,7 +35,8 @@ ul {
   
 }
 
-button {
+a {
+  
   padding: 10px 20px;
   background-color: rgba(255,255,255);
   border: 1px solid black;
@@ -52,7 +55,7 @@ button {
   margin: auto;
   background-color: rgba(255,255,255,0.8);
   border: 1px solid black;
-  padding: 20px;
+  padding: 10px;
   margin: 10px auto; 
   border-radius: 10px;
   text-align: center;
